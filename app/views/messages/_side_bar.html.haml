@@ -1,0 +1,27 @@
+.side-bar
+  .side-bar__header
+    .side-bar__header__box
+      .side-bar__header__box__name jun
+      
+      .side-bar__header__box__menu
+        .side-bar__header__box__menu__new
+          = link_to "#" do
+            = icon('fas', 'edit')
+        .side-bar__header__box__menu__edit
+          = link_to "#"  do
+            = icon('fas', 'cog')
+      
+  .side-bar__main
+    .side-bar__main__groups
+      .side-bar__main__groups__group
+        %p.group-name sample
+        %p.comment testtest
+      .side-bar__main__groups__group
+        %p.group-name sample
+        %p.comment testtest
+      .side-bar__main__groups__group
+        %p.group-name sample
+        %p.comment %testtest
+      .side-bar__main__groups__group
+        %p.group-name sample
+        %p.comment testtest
