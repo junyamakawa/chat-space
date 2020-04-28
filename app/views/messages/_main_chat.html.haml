@@ -1,25 +1,20 @@
 .main-chat
   .main-chat__header
     .main-chat__header__current-group 
-      %p.groups-name de la ruz
-      %p.members-name jun yamakawa
+      %p.groups-name 
+        = @group.name
+      %p.members-name
+        = current_user.name
     .main-chat__header__edit 
-      = link_to "#", class: "btn" do
+      = link_to edit_group_path(@group), class: "btn" do
         = "edit"
-
   .main-chat__messages
-    .main-chat__messages__message
-      .main-chat__messages__message_upper-info
-        %p.group-members-name ayalucca
-        %p.timestamp 2020/04/20
-      .main-chat__messages__message__text
-        %p.message hora
-
+    = render @messages
   .main-chat__form
-    %form.new-message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
