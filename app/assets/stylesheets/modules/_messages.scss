@@ -49,6 +49,7 @@ $color2: #38aef0;
       padding: 20px;
       box-sizing: border-box;
       &__groups {
+        overflow: scroll;
         &__group {
           .group-name {
             margin-bottom: 5px;
@@ -175,4 +176,8 @@ $color2: #38aef0;
       }
     }
   } 
+}
+
+a{
+  text-decoration: none;
 }
