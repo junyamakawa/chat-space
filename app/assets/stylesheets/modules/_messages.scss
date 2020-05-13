@@ -113,24 +113,25 @@ $color2: #38aef0;
       padding:35px 0 0 40px;
       overflow: scroll;
       &__message {
+        margin-top: 30px;
+        margin-bottom: 30px;
         &_upper-info {
           display: flex;
-          .group-members-name {
+          &__user-name {
             color: #333333;
             font-size: 16px;
             font-weight: bold;
           }
-          .timestamp {
+          &__date {
             color: #999999;
             font-size: 12px;
+            margin-left: 10px;
           }
         }    
         &__text {
-          .message {
-            color: #434A54;
-            font-size: 14px;
-            margin: 12px 0 46px 0;
-          }
+          color: #434A54;
+          font-size: 14px;
+          margin: 12px 0 46px 0;         
         }
       }
     }
