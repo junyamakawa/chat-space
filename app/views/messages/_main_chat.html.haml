@@ -4,7 +4,10 @@
       %p.groups-name 
         = @group.name
       %p.members-name
-        = current_user.name
+        -# = current_user.name
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .main-chat__header__edit 
       = link_to edit_group_path(@group), class: "btn" do
         = "edit"
